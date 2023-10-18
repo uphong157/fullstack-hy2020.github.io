@@ -522,7 +522,18 @@ The current application code can be found on [GitHub](https://github.com/fullsta
 
 ### Exercises 5.1.-5.4.
 
-We will now create a frontend for the bloglist backend we created in the last part. You can use [this application](https://github.com/fullstack-hy2020/bloglist-frontend) from GitHub as the base of your solution. The application expects your backend to be running on port 3003.
+We will now create a frontend for the bloglist backend we created in the last part. You can use [this application](https://github.com/fullstack-hy2020/bloglist-frontend) from GitHub as the base of your solution. You should setup proxy in your vite config file vite.config.js to make sure it uses your backend. For example, if your backend is live on port 3003, the config should be
+
+```js
+export default defineConfig({
+  .....
+  server: {
+    proxy: {
+      "/api": "http://localhost:3003",
+    }
+  }
+})
+```
 
 It is enough to submit your finished solution. You can do a commit after each exercise, but that is not necessary.
 
